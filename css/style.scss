@@ -224,7 +224,39 @@ main {
   // section1 메인화면 종료
 
   section.profile {
+    flex-direction: column;
     background-color: #156;
+    h3 {
+      font-size: 30px;
+      margin: 60px;
+    }
+    ul {
+      @include center();
+      flex-wrap: wrap;
+      // background-color: rgba(136, 136, 136, 0.29);
+      width: 80%;
+      li {
+        display: flex;
+        // @include center();
+        width: 25%;
+        margin: 20px;
+        // background-color: rgba(64, 178, 206, 0.391);
+        .icon {
+          // background-color: rgba(24, 239, 132, 0.439);
+          width: 80px;
+          @include center();
+          i {
+            @include center();
+            font-size: 30px;
+            line-height: 30px;
+          }
+        }
+        p {
+          margin-top: 10px;
+          font-size: 18px;
+        }
+      }
+    }
   }
 }
 
