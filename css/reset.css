@@ -151,3 +151,7 @@ body::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-track {
   display: none;
 }
+
+img {
+  display: block;
+}
