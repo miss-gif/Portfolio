@@ -1,0 +1,166 @@
+body {
+  background-color: orange;
+  color: #fff;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+}
+
+.inner {
+  width: 95%;
+}
+
+// 헤더 영역
+header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.3);
+  @include center();
+
+  .inner {
+    @include center();
+    justify-content: space-between;
+
+    h1 {
+    }
+
+    nav {
+      ul {
+        display: flex;
+
+        li {
+          @include center();
+          border: 1px solid #fff;
+          padding: 10px;
+          width: 100px;
+          margin-right: 40px;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+          }
+        }
+      }
+    }
+  }
+
+  .language {
+    border: 1px solid #fff;
+    padding: 10px 30px;
+  }
+}
+
+// 퀵 메뉴
+main {
+  .quick_menu {
+    position: fixed;
+    z-index: 88;
+    // 사이드 슬라이드
+    ul.slide_number {
+      position: fixed;
+      top: 50%;
+      right: 3%;
+      transform: translate(0%, -50%);
+
+      > li {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          display: block;
+          width: 8px;
+          height: 8px;
+          background-color: #fff;
+          border-radius: 50%;
+        }
+      }
+    }
+    button {
+      position: fixed;
+      right: 3%;
+      bottom: 6%;
+    }
+  }
+}
+
+// 메인 영역
+main {
+  // 고정 값
+  section {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+  }
+  // section1 메인화면 시작
+  section.main_view {
+    background-image: url(../img/bg/achieve-g4836a0f87_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include center();
+
+    .inner {
+      height: 100vh;
+      position: relative;
+
+      .main_title {
+        position: absolute;
+        top: 40vh;
+        left: 0;
+
+        h2 {
+          font-size: 3rem;
+          // line-height: 6rem;
+          margin-bottom: 3rem;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1rem;
+        }
+      }
+
+      // 배너 슬라이드
+      ul.banner_number {
+        display: flex;
+        position: absolute;
+        left: 0;
+        bottom: 50px;
+
+        > li {
+          width: 58px;
+          height: 5px;
+          margin-right: 9px;
+          background-color: #fff;
+          opacity: 0.4;
+          transform: skew(-35deg);
+          cursor: pointer;
+        }
+      }
+
+      // 우측 하단 스크롤 버튼
+      > button {
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+      }
+    }
+  }
+  // section1 메인화면 종료
+}
+
+// 푸터 영역
+footer {
+}
