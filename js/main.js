@@ -1,8 +1,8 @@
 // section1 메인화면
 
 // 배너 슬라이드 번호를 누르면 보이는 화면 제어
-const bannerNumber = document.querySelectorAll(".banner_number>li");
-const articleNumber = document.querySelectorAll(".main_view>article");
+const bannerNumber = document.querySelectorAll(".banner_number>li"); // 버튼 부분
+const articleNumber = document.querySelectorAll(".main_view>article"); // 이미지 부분
 
 bannerNumber[0].addEventListener("click", () => {
   bannerNumber[0].style.opacity = "1";
@@ -47,14 +47,3 @@ bannerNumber[3].addEventListener("click", () => {
   articleNumber[2].style.visibility = "hidden";
   articleNumber[3].style.visibility = "visible";
 });
-
-// 반복실행
-setInterval(실행, 100);
-
-function 실행() {
-  // setTimeout(함수, 10000);
-}
-
-function 함수() {
-  console.log("1초 후 실행");
-}

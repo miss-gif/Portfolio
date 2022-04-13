@@ -147,6 +147,16 @@ main .quick_menu button {
   background-color: transparent;
   border: 0;
   color: #fff;
+  -webkit-animation-name: moving;
+          animation-name: moving;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 main .quick_menu button p {
@@ -157,6 +167,36 @@ main .quick_menu button p {
 
 main .quick_menu button img {
   width: 50px;
+}
+
+@-webkit-keyframes moving {
+  0% {
+    right: 3%;
+    bottom: 6%;
+  }
+  50% {
+    right: 3%;
+    bottom: 7%;
+  }
+  100% {
+    right: 3%;
+    bottom: 6%;
+  }
+}
+
+@keyframes moving {
+  0% {
+    right: 3%;
+    bottom: 6%;
+  }
+  50% {
+    right: 3%;
+    bottom: 7%;
+  }
+  100% {
+    right: 3%;
+    bottom: 6%;
+  }
 }
 
 main section {

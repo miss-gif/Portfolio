@@ -109,6 +109,7 @@ main {
       }
     }
 
+    // 스크롤 다운 버튼
     button {
       @include center();
       position: fixed;
@@ -117,15 +118,35 @@ main {
       background-color: transparent;
       border: 0;
       color: #fff;
-
+      animation-name: moving; // 애니메이션 명
+      animation-duration: 1s; // 완료까지 걸리는 시간 설정
+      animation-timing-function: linear; // 속도 곡선 설정
+      // animation-delay: 2s; // 지연 설정
+      animation-iteration-count: infinite; // 반복 설정
+      animation-direction: alternate; // 재생 방향 설정
       p {
         font-size: 10px;
         position: absolute;
         top: -20px;
       }
-
       img {
         width: 50px;
+      }
+    }
+    @keyframes moving {
+      0% {
+        right: 3%;
+        bottom: 6%;
+      }
+
+      50% {
+        right: 3%;
+        bottom: 7%;
+      }
+
+      100% {
+        right: 3%;
+        bottom: 6%;
       }
     }
   }
