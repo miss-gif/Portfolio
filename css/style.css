@@ -1,5 +1,5 @@
 body {
-  background-color: orange;
+  background-color: #333;
   color: #fff;
   scroll-behavior: smooth;
   scroll-behavior: smooth;
@@ -96,6 +96,18 @@ header .inner nav ul li:last-child {
   margin-right: 0;
 }
 
+header .inner nav ul li a {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+}
+
+header .inner nav ul li a:hover {
+  color: orange;
+  background-color: #fff;
+  border-radius: 30px;
+}
+
 header .language {
   border: 1px solid #fff;
   padding: 10px 20px;
@@ -121,7 +133,6 @@ main {
 main .quick_menu {
   position: fixed;
   width: 90%;
-  background-color: #156;
   top: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -206,20 +217,6 @@ main .quick_menu ul.slide_number > li > a {
   height: 6px;
   background-color: #fff;
   border-radius: 50%;
-}
-
-main .quick_menu ul.slide_number > li > a::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  content: "";
-  width: 30px;
-  height: 30px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  border: 1px solid #fff;
 }
 
 main .quick_menu button {
@@ -423,12 +420,17 @@ main section.profile {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #156;
+  background-image: url(../img/mountains-1412683.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 main section.profile h3 {
-  font-size: 30px;
-  margin: 60px;
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 6rem;
+  text-shadow: 2px 2px 5px #000;
 }
 
 main section.profile ul {
@@ -443,19 +445,23 @@ main section.profile ul {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 80%;
+  width: 1000px;
 }
 
 main section.profile ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 25%;
-  margin: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 80px;
+  margin: 10px;
+  background-color: rgba(64, 178, 206, 0.391);
 }
 
 main section.profile ul li .icon {
-  width: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -465,6 +471,8 @@ main section.profile ul li .icon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 80px;
+  height: 100%;
 }
 
 main section.profile ul li .icon i {
@@ -477,13 +485,19 @@ main section.profile ul li .icon i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 40px;
 }
 
 main section.profile ul li p {
-  margin-top: 10px;
-  font-size: 18px;
+  line-height: 1.2;
+  text-shadow: 0px 0px 4px #000;
+}
+
+main section.tech_stack {
+  background-image: url(../img/halftone-2484003_1920.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 main section.project {
@@ -563,6 +577,29 @@ main section.career ul li {
 
 footer {
   height: 30px;
+}
+
+.onClick {
+  position: relative;
+  display: block;
+  width: 6px;
+  height: 6px;
   background-color: #156;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.onClick::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border: 1px solid #fff;
 }
 /*# sourceMappingURL=style.css.map */

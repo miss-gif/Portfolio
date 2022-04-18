@@ -1,3 +1,46 @@
+// 사이드 퀵 메뉴 제어
+const sideSlide = document.querySelectorAll("ul.slide_number>li"); // 사이드 퀵 슬라이드 버튼
+
+sideSlide[0].addEventListener("click", function () {
+  sideSlide[0].classList.add("onClick");
+  sideSlide[1].classList.remove("onClick");
+  sideSlide[2].classList.remove("onClick");
+  sideSlide[3].classList.remove("onClick");
+  sideSlide[4].classList.remove("onClick");
+});
+
+sideSlide[1].addEventListener("click", function () {
+  sideSlide[0].classList.remove("onClick");
+  sideSlide[1].classList.add("onClick");
+  sideSlide[2].classList.remove("onClick");
+  sideSlide[3].classList.remove("onClick");
+  sideSlide[4].classList.remove("onClick");
+});
+
+sideSlide[2].addEventListener("click", function () {
+  sideSlide[0].classList.remove("onClick");
+  sideSlide[1].classList.remove("onClick");
+  sideSlide[2].classList.add("onClick");
+  sideSlide[3].classList.remove("onClick");
+  sideSlide[4].classList.remove("onClick");
+});
+
+sideSlide[3].addEventListener("click", function () {
+  sideSlide[0].classList.remove("onClick");
+  sideSlide[1].classList.remove("onClick");
+  sideSlide[2].classList.remove("onClick");
+  sideSlide[3].classList.add("onClick");
+  sideSlide[4].classList.remove("onClick");
+});
+
+sideSlide[4].addEventListener("click", function () {
+  sideSlide[0].classList.remove("onClick");
+  sideSlide[1].classList.remove("onClick");
+  sideSlide[2].classList.remove("onClick");
+  sideSlide[3].classList.remove("onClick");
+  sideSlide[4].classList.add("onClick");
+});
+
 // section1 메인화면
 
 // 배너 슬라이드 번호를 누르면 보이는 화면 제어
@@ -47,3 +90,5 @@ bannerNumber[3].addEventListener("click", () => {
   articleNumber[2].style.visibility = "hidden";
   articleNumber[3].style.visibility = "visible";
 });
+
+// section4 프로젝트
