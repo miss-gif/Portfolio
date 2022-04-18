@@ -79,32 +79,81 @@ header {
   }
 }
 
-// 퀵 메뉴
+// 사이드 퀵 메뉴
 main {
+  @include center();
+  flex-direction: column;
   .quick_menu {
     position: fixed;
+    width: 90%;
+    background-color: #156;
+    top: 50%;
+    @include center();
     z-index: 90;
 
     // 사이드 슬라이드
     ul.slide_number {
-      position: fixed;
+      position: absolute;
+      right: 0;
       top: 50%;
-      right: 3%;
       transform: translate(0%, -50%);
+      flex-direction: column;
 
       > li {
-        margin-bottom: 40px;
+        position: relative;
+        margin-bottom: 60px;
 
         &:last-child {
           margin-bottom: 0;
         }
+        &:hover::before {
+          position: absolute;
+          top: 50%;
+          left: -90px;
+          transform: translate(-50%, -50%);
+          content: "";
+          width: 120px;
+          height: 35px;
+          background-color: #fff;
+          border-radius: 20px;
+          color: #111;
+          @include center();
+        }
+        &:nth-child(1):hover::before {
+          content: "Main";
+        }
+        &:nth-child(2):hover::before {
+          content: "Profile";
+        }
+        &:nth-child(3):hover::before {
+          content: "Tech Stack";
+        }
 
-        a {
+        &:nth-child(4):hover::before {
+          content: "Project";
+        }
+        &:nth-child(5):hover::before {
+          content: "Career";
+        }
+        > a {
+          position: relative;
           display: block;
-          width: 8px;
-          height: 8px;
+          width: 6px;
+          height: 6px;
           background-color: #fff;
           border-radius: 50%;
+          &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border: 1px solid #fff;
+          }
         }
       }
     }
@@ -113,7 +162,7 @@ main {
     button {
       @include center();
       position: fixed;
-      right: 3%;
+      right: 5%;
       bottom: 6%;
       background-color: transparent;
       border: 0;
@@ -135,17 +184,14 @@ main {
     }
     @keyframes moving {
       0% {
-        right: 3%;
         bottom: 6%;
       }
 
       50% {
-        right: 3%;
         bottom: 7%;
       }
 
       100% {
-        right: 3%;
         bottom: 6%;
       }
     }
@@ -169,7 +215,7 @@ main {
 
     .quick_menu_banner {
       position: absolute;
-      left: 40px;
+      width: 90%;
       bottom: 40px;
       z-index: 30;
 
@@ -201,9 +247,10 @@ main {
       justify-content: center;
       flex-direction: column;
       box-sizing: border-box;
+      @include center();
 
       .main_title {
-        margin: 40px;
+        width: 90%;
         h2 {
           font-size: 36px;
           font-weight: 600;
@@ -214,7 +261,7 @@ main {
           margin: 30px 0;
         }
 
-        button {
+        > button {
           width: 150px;
           height: 40px;
           font-size: 18px;
@@ -223,6 +270,11 @@ main {
           color: #fff;
           border: 1px solid #fff;
           margin: 20px 0;
+          text-transform: uppercase;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: orange;
+          }
         }
       }
 
