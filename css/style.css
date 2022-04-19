@@ -102,12 +102,6 @@ header .inner nav ul li a {
   padding: 10px;
 }
 
-header .inner nav ul li a:hover {
-  color: orange;
-  background-color: #fff;
-  border-radius: 30px;
-}
-
 header .language {
   border: 1px solid #fff;
   padding: 10px 20px;
@@ -385,7 +379,7 @@ main section.main_view article .main_title > button:hover {
 
 main section.main_view article:nth-child(2) {
   visibility: visible;
-  background-image: url(../img/bg/01.jpg);
+  background-image: url(../img/1.main/01.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -393,7 +387,7 @@ main section.main_view article:nth-child(2) {
 
 main section.main_view article:nth-child(3) {
   visibility: hidden;
-  background-image: url(../img/bg/02.jpg);
+  background-image: url(../img/1.main/02.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -401,7 +395,7 @@ main section.main_view article:nth-child(3) {
 
 main section.main_view article:nth-child(4) {
   visibility: hidden;
-  background-image: url(../img/bg/03.jpg);
+  background-image: url(../img/1.main/03.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -409,7 +403,7 @@ main section.main_view article:nth-child(4) {
 
 main section.main_view article:nth-child(5) {
   visibility: hidden;
-  background-image: url(../img/bg/04.jpg);
+  background-image: url(../img/1.main/04.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -420,14 +414,14 @@ main section.profile {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url(../img/mountains-1412683.png);
+  background-image: url(../img/2.profile/bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 main section.profile h3 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 600;
   margin: 6rem;
   text-shadow: 2px 2px 5px #000;
@@ -455,10 +449,11 @@ main section.profile ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 18px;
   width: 300px;
   height: 80px;
   margin: 10px;
-  background-color: rgba(64, 178, 206, 0.391);
+  background-color: rgba(64, 178, 206, 0.3);
 }
 
 main section.profile ul li .icon {
@@ -560,6 +555,17 @@ main section.career {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-image: url(../img/5.career/careerBG.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main section.career h3 {
+  font-size: 6rem;
+  margin-bottom: 6rem;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 main section.career ul {
@@ -569,14 +575,33 @@ main section.career ul {
 }
 
 main section.career ul li {
-  width: 200px;
-  height: 200px;
-  background-color: rgba(255, 255, 255, 0.201);
+  width: 350px;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.6);
   margin: 10px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-footer {
-  height: 30px;
+main section.career ul li h5 {
+  position: relative;
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+main section.career ul li h5::after {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+main section.career ul li p {
+  font-size: 20px;
 }
 
 .onClick {

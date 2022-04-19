@@ -69,9 +69,6 @@ header {
             box-sizing: border-box;
             padding: 10px;
             &:hover {
-              color: orange;
-              background-color: #fff;
-              border-radius: 30px;
             }
           }
         }
@@ -275,7 +272,7 @@ main {
 
       &:nth-child(2) {
         visibility: visible;
-        background-image: url(../img/bg/01.jpg);
+        background-image: url(../img/1.main/01.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -283,7 +280,7 @@ main {
 
       &:nth-child(3) {
         visibility: hidden;
-        background-image: url(../img/bg/02.jpg);
+        background-image: url(../img/1.main/02.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -291,7 +288,7 @@ main {
 
       &:nth-child(4) {
         visibility: hidden;
-        background-image: url(../img/bg/03.jpg);
+        background-image: url(../img/1.main/03.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -299,7 +296,7 @@ main {
 
       &:nth-child(5) {
         visibility: hidden;
-        background-image: url(../img/bg/04.jpg);
+        background-image: url(../img/1.main/04.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -312,13 +309,13 @@ main {
   // section2 프로필 시작
   section.profile {
     flex-direction: column;
-    background-image: url(../img/mountains-1412683.png);
+    background-image: url(../img/2.profile/bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
     h3 {
-      font-size: 4rem;
+      font-size: 5rem;
       font-weight: 600;
       margin: 6rem;
       text-shadow: 2px 2px 5px #000;
@@ -332,10 +329,11 @@ main {
       li {
         display: flex;
         align-items: center;
+        font-size: 18px;
         width: 300px;
         height: 80px;
         margin: 10px;
-        background-color: rgba(64, 178, 206, 0.391);
+        background-color: rgba(64, 178, 206, 0.3);
         .icon {
           @include center();
           width: 80px;
@@ -428,17 +426,43 @@ main {
   // section5 커리어 시작
   section.career {
     flex-direction: column;
+    background-image: url(../img/5.career/careerBG.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     h3 {
+      // display: block;
+      font-size: 6rem;
+      margin-bottom: 6rem;
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.6);
     }
     ul {
       display: flex;
 
       li {
-        width: 200px;
-        height: 200px;
-        background-color: rgba(255, 255, 255, 0.201);
+        width: 350px;
+        height: 350px;
+        background-color: rgba(0, 0, 0, 0.6);
         margin: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+        h5 {
+          position: relative;
+          font-size: 3rem;
+          margin-bottom: 30px;
+          &::after {
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            content: "";
+            width: 100%;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.8);
+          }
+        }
         p {
+          font-size: 20px;
         }
       }
     }
@@ -448,8 +472,6 @@ main {
 
 // 푸터 영역
 footer {
-  height: 30px;
-  // background-color: #156;
 }
 
 // 사이드 퀵 메뉴 클릭 시 디자인
