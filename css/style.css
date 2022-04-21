@@ -14,6 +14,8 @@ body {
 }
 
 header {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
   position: fixed;
   z-index: 99;
   width: 100%;
@@ -27,7 +29,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 header::before {
@@ -37,7 +39,7 @@ header::before {
   height: 80px;
   -webkit-filter: blur(100px);
           filter: blur(100px);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   z-index: -1;
 }
 
@@ -89,7 +91,7 @@ header .inner nav ul li {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 80px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 header .inner nav ul li:last-child {
@@ -310,7 +312,7 @@ main section.main_view .quick_menu_banner ul.banner_number {
 
 main section.main_view .quick_menu_banner ul.banner_number > li {
   width: 58px;
-  height: 5px;
+  height: 7px;
   margin-right: 9px;
   background-color: #fff;
   opacity: 0.3;
