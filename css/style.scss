@@ -1,12 +1,4 @@
-body {
-  background-color: #333;
-  color: #fff;
-  scroll-behavior: smooth;
-  scroll-behavior: smooth;
-  font-size: 16px;
-  box-sizing: border-box;
-  font-family: "Noto Sans KR", sans-serif;
-}
+/* common */
 
 @mixin center {
   display: flex;
@@ -14,32 +6,41 @@ body {
   align-items: center;
 }
 
-.inner {
-  width: 90%;
+@mixin shadow {
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626;
+}
+
+@mixin transition {
+  transition: 0.35s;
+}
+
+.hidden {
+  display: none;
+}
+
+/* setting */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #e5e5e5;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 // 헤더 영역
 header {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
   position: fixed;
-  z-index: 99;
+  z-index: 9999;
   width: 100%;
   height: 80px;
   @include center();
-  background-color: rgba(0, 0, 0, 0.05);
-  // background-color: rgba(255, 255, 255, 0.1);
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 80px;
-    filter: blur(100px);
-    // background-color: rgba(0, 0, 0, 0.3);
-    background-color: rgba(255, 255, 255, 0.3);
-    z-index: -1;
-  }
-
   .inner {
+    width: 90%;
     @include center();
     justify-content: space-between;
 
@@ -57,20 +58,31 @@ header {
         display: flex;
         li {
           @include center();
-          // padding: 10px;
-          // width: 100px;
-          // border: 1px solid #fff;
-          margin-right: 4em;
+          font-size: 18px;
+          margin-right: 60px;
           letter-spacing: 2px;
-          font-size: 22px;
+          padding: 10px;
           &:last-child {
             margin-right: 0;
           }
-
           a {
-            box-sizing: border-box;
-            padding: 10px;
+            padding: 0 10px;
+            position: relative;
+            transition: 0.15s;
+            text-shadow: 0 0 2px rgba(0, 0, 0, 0.5), 1px 1px 3px rgba(0, 0, 0, 0.5);
             &:hover {
+              // text-shadow: 2px 2px 3px #d3d9d2;
+            }
+            &:hover::before {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              content: "";
+              width: 100%;
+              height: 16px;
+              transform: skew(-35deg);
+              background-color: #298f46;
+              z-index: -1;
             }
           }
         }
@@ -78,10 +90,34 @@ header {
     }
   }
 
-  .language {
+  button.language {
+    position: relative;
     border: 1px solid #fff;
     padding: 10px 20px;
     cursor: pointer;
+    &:hover {
+      background-color: #666;
+    }
+    > ul.panel {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      margin-top: 15px;
+      > li {
+        background-color: #333;
+        &:hover {
+          background-color: #fff;
+        }
+        a {
+          display: block;
+          padding: 10px 20px;
+          color: #fff;
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
   }
 }
 

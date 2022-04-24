@@ -155,3 +155,8 @@ body::-webkit-scrollbar-track {
 img {
   display: block;
 }
+
+button {
+  background-color: transparent;
+  color: #fff;
+}
