@@ -63,6 +63,32 @@ function scrollFunction() {
   }
 }
 
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+
+window.addEventListener("scroll", () => {
+  //스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
+  console.log(window.scrollX, window.scrollY);
+  if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 20) {
+    language.style.display = "none";
+  } else {
+    language.style.display = "block";
+  }
+});
+
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+
 // section1 메인화면
 
 // 배너 슬라이드 번호를 누르면 보이는 화면 제어
