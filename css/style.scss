@@ -20,6 +20,10 @@
 
 /* setting */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -29,7 +33,6 @@ body {
   background-color: #e5e5e5;
   color: #fff;
   font-size: 16px;
-  box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -78,7 +81,7 @@ header {
               width: 0;
               height: 16px;
               background: none repeat scroll 0 0 transparent;
-              background: #ffb000;
+              background: rgba(255, 166, 0, 0.8);
               transition: width 0.3s ease 0s, left 0.3s ease 0s;
               z-index: -1;
             }
@@ -190,27 +193,30 @@ main {
     }
 
     // 스크롤 다운 버튼
-    button {
-      @include center();
-      position: fixed;
-      right: 5%;
-      bottom: 6%;
-      background-color: transparent;
+    button.scrollDown {
       border: 0;
-      color: #fff;
-      animation-name: moving; // 애니메이션 명
-      animation-duration: 1s; // 완료까지 걸리는 시간 설정
-      animation-timing-function: linear; // 속도 곡선 설정
-      // animation-delay: 2s; // 지연 설정
-      animation-iteration-count: infinite; // 반복 설정
-      animation-direction: alternate; // 재생 방향 설정
-      p {
-        font-size: 10px;
-        position: absolute;
-        top: -20px;
-      }
-      img {
-        width: 50px;
+      > a {
+        @include center();
+        position: fixed;
+        right: 5%;
+        bottom: 6%;
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+        animation-name: moving; // 애니메이션 명
+        animation-duration: 1s; // 완료까지 걸리는 시간 설정
+        animation-timing-function: linear; // 속도 곡선 설정
+        // animation-delay: 2s; // 지연 설정
+        animation-iteration-count: infinite; // 반복 설정
+        animation-direction: alternate; // 재생 방향 설정
+        > p {
+          font-size: 10px;
+          position: absolute;
+          top: -20px;
+        }
+        > img {
+          width: 50px;
+        }
       }
     }
     @keyframes moving {
@@ -231,22 +237,19 @@ main {
 
 // 메인 영역
 main {
-  scroll-snap-align: center;
   // 공통 고정 값
   section {
     position: relative;
     width: 100%;
     height: 100vh;
-    box-sizing: border-box;
     @include center();
     scroll-snap-align: center;
+    margin-bottom: 100px;
   }
 
   // section1 메인화면 시작
   section.main_view {
     position: relative;
-    scroll-snap-align: center;
-
     .quick_menu_banner {
       position: absolute;
       width: 90%;
@@ -280,7 +283,6 @@ main {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      box-sizing: border-box;
       @include center();
 
       .main_title {
@@ -387,7 +389,6 @@ main {
           }
         }
         > div {
-          box-sizing: border-box;
           @include center();
           align-items: baseline;
           flex-direction: column;
@@ -422,58 +423,106 @@ main {
 
   // section4 프로젝트 시작
   section.project {
-    .contents {
-      width: 70%;
-      height: 100vh;
-      background-color: rgba(255, 0, 0, 0.3);
-      ul {
-        @include center();
-        // margin-top: 100px;
-        // padding: 30px;
-        height: 100%;
-        background-color: rgba(255, 0, 230, 0.1);
-        display: flex;
-        flex-wrap: wrap;
-        li {
-          @include center();
-          width: 25%;
-          height: 200px;
-          margin: 10px;
-          background-color: rgba(222, 225, 30, 0.4);
-          > div {
-            img {
-              width: 300px;
-              height: 120px;
-            }
-            p {
-              @include center();
-              line-height: 4;
-            }
-          }
-        }
-      }
-    }
+    position: relative;
+    @include center();
+    flex-direction: column;
+    // 검색창
     .search_window {
+      position: absolute;
+      top: 0;
+      left: 0;
       @include center();
       flex-direction: column;
-      width: 30%;
-      height: 100vh;
+      padding-top: 60px;
+      width: 100%;
+      height: 30vh;
       background-color: rgba(0, 0, 255, 0.3);
-      // padding: 150px 10px;
-      box-sizing: border-box;
       .search {
+        margin: 20px;
+        @include center();
+        border-radius: 5px;
+        background-color: #fff;
+        width: 60%;
+        height: 50px;
+        padding: 0 20px;
+        // padding-bottom: 5%;
         input {
+          width: 100%;
+          height: 100%;
+          border: 0;
+          outline: none;
+        }
+        i {
+          color: #000;
+          font-size: 20px;
         }
       }
       .filter_window {
-        background-color: rgba(255, 255, 255, 0.1);
-        width: 300px;
-        height: 60px;
-        border-radius: 5px;
-        margin: 10px 0;
-        p {
+        @include center();
+        justify-content: space-between;
+        width: 60%;
+        button {
+          @include center();
+          padding: 20px;
+          height: 30px;
+          border: 0;
+          border-radius: 5px;
+          background-color: #fff;
+          color: #000;
         }
-        input {
+      }
+    }
+    // 검색 내용
+    .contents {
+      position: absolute;
+      @include center();
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70vh;
+      ul {
+        @include center();
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        overflow: hidden;
+        li {
+          position: relative;
+          @include center();
+          flex-direction: column;
+          width: 25%;
+          height: 50%;
+          margin-right: 20px;
+          // background-color: rgba(0, 0, 255, 0.3);
+          img {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+          }
+          .text {
+            position: absolute;
+            bottom: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            @include center();
+            flex-direction: column;
+            width: 65%;
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px;
+            padding: 8px;
+            line-height: 25px;
+            h6 {
+              font-size: 20px;
+              // line-height: 30px;
+            }
+            .tag {
+              @include center();
+              p {
+                margin: 0 2px;
+              }
+            }
+          }
         }
       }
     }
@@ -503,7 +552,6 @@ main {
         background-color: rgba(0, 0, 0, 0.6);
         margin: 10px;
         padding: 20px;
-        box-sizing: border-box;
         h5 {
           position: relative;
           font-size: 3rem;

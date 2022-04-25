@@ -59,9 +59,11 @@
             <li><a href="#project"></a></li>
             <li><a href="#career"></a></li>
           </ul>
-          <button>
-            <p>SCROLL <br />DOWN</p>
-            <img src="./img/scroll down/scroll down wh2.png" alt="스크롤 다운" />
+          <button class="scrollDown">
+            <a href="#profile">
+              <p>SCROLL <br />DOWN</p>
+              <img src="./img/scroll down/scroll down wh2.png" alt="스크롤 다운" />
+            </a>
           </button>
         </div>
 
@@ -166,104 +168,107 @@
 
         <!-- section4 프로젝트 시작 -->
         <section id="project" class="project">
-          <div class="contents">
-            <ul id="list">
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-              <li>
-                <div class="project_list">
-                  <img src="" alt="" />
-                  <p>스타벅스 클론코딩</p>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <!-- 검색창 -->
           <div class="search_window">
             <div class="search">
               <input type="text" />
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div class="filter_window">
-              <p>선택</p>
-              <input type="checkbox" />전체 선택 <input type="checkbox" />선택 해제
+              <button class="filter_btn active" onClick="filterSelection('all')">모두 보기</button>
+              <button class="filter_btn" onClick="filterSelection('single')">개인</button>
+              <button class="filter_btn" onClick="filterSelection('team')">팀별</button>
+              <button class="filter_btn" onClick="filterSelection('clone')">클론 코딩</button>
+              <button class="filter_btn" onClick="filterSelection('vanilla')">바닐라</button>
+              <button class="filter_btn" onClick="filterSelection('framework')">프레임워크</button>
+              <button class="filter_btn" onClick="filterSelection('library')">라이브러리</button>
+              <button class="filter_btn" onClick="filterSelection('pc')">PC</button>
+              <button class="filter_btn" onClick="filterSelection('tablet')">태블릿</button>
+              <button class="filter_btn" onClick="filterSelection('mobile')">모바일</button>
+              <button class="filter_btn" onClick="filterSelection('responsive')">반응형</button>
             </div>
-            <div class="filter_window">
-              <p>작업방식</p>
-              <input type="checkbox" />개인 <input type="checkbox" />팀별 <input type="checkbox" />클론 코딩
-            </div>
-            <div class="filter_window">
-              <p>사용 기술</p>
-              <input type="checkbox" />자바스크립트 <input type="checkbox" />리액트 <input type="checkbox" />뷰<br />
-              <input type="checkbox" />부트스트랩 <input type="checkbox" />제이쿼리 <input type="checkbox" />바닐라
-            </div>
-            <div class="filter_window">
-              <p>사이즈</p>
-              <input type="checkbox" />PC <input type="checkbox" />태블릿 <input type="checkbox" />모바일 <input type="checkbox" />반응형
-            </div>
+          </div>
+          <!-- 검색 내용 -->
+          <div class="contents">
+            <ul id="list">
+              <li>
+                <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
+                <div class="text">
+                  <h6>스타벅스 클론코딩</h6>
+                  <div class="tag">
+                    <p>#클론 코딩</p>
+                    <p>#라이브러리</p>
+                    <p>#PC</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
+                <div class="text">
+                  <h6>스타벅스 클론코딩</h6>
+                  <div class="tag">
+                    <p>#클론 코딩</p>
+                    <p>#라이브러리</p>
+                    <p>#PC</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
+                <div class="text">
+                  <h6>스타벅스 클론코딩</h6>
+                  <div class="tag">
+                    <p>#클론 코딩</p>
+                    <p>#라이브러리</p>
+                    <p>#PC</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
+                <div class="text">
+                  <h6>스타벅스 클론코딩</h6>
+                  <div class="tag">
+                    <p>#클론 코딩</p>
+                    <p>#라이브러리</p>
+                    <p>#PC</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
+                <div class="text">
+                  <h6>스타벅스 클론코딩</h6>
+                  <div class="tag">
+                    <p>#클론 코딩</p>
+                    <p>#라이브러리</p>
+                    <p>#PC</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
+                <div class="text">
+                  <h6>스타벅스 클론코딩</h6>
+                  <div class="tag">
+                    <p>#클론 코딩</p>
+                    <p>#라이브러리</p>
+                    <p>#PC</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
+                <div class="text">
+                  <h6>스타벅스 클론코딩</h6>
+                  <div class="tag">
+                    <p>#클론 코딩</p>
+                    <p>#라이브러리</p>
+                    <p>#PC</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
         <!-- section4 프로젝트 종료 -->

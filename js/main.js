@@ -49,6 +49,20 @@ sideSlide[4].addEventListener("click", function () {
   sideSlide[4].classList.add("onClick");
 });
 
+const scrollDown = document.querySelector(".scrollDown"); // 스크롤 다운 btn
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollDown.style.display = "none";
+  } else {
+    scrollDown.style.display = "block";
+  }
+}
+
 // section1 메인화면
 
 // 배너 슬라이드 번호를 누르면 보이는 화면 제어

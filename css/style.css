@@ -4,6 +4,11 @@
 }
 
 /* setting */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   -ms-scroll-snap-type: y mandatory;
@@ -14,8 +19,6 @@ body {
   background-color: #e5e5e5;
   color: #fff;
   font-size: 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -107,7 +110,7 @@ header .inner nav ul li a::before {
   width: 0;
   height: 16px;
   background: none repeat scroll 0 0 transparent;
-  background: #ffb000;
+  background: rgba(255, 166, 0, 0.8);
   -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   z-index: -1;
@@ -259,7 +262,11 @@ main .quick_menu ul.slide_number > li > a {
   border-radius: 50%;
 }
 
-main .quick_menu button {
+main .quick_menu button.scrollDown {
+  border: 0;
+}
+
+main .quick_menu button.scrollDown > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -287,13 +294,13 @@ main .quick_menu button {
           animation-direction: alternate;
 }
 
-main .quick_menu button p {
+main .quick_menu button.scrollDown > a > p {
   font-size: 10px;
   position: absolute;
   top: -20px;
 }
 
-main .quick_menu button img {
+main .quick_menu button.scrollDown > a > img {
   width: 50px;
 }
 
@@ -321,16 +328,10 @@ main .quick_menu button img {
   }
 }
 
-main {
-  scroll-snap-align: center;
-}
-
 main section {
   position: relative;
   width: 100%;
   height: 100vh;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,11 +342,11 @@ main section {
       -ms-flex-align: center;
           align-items: center;
   scroll-snap-align: center;
+  margin-bottom: 100px;
 }
 
 main section.main_view {
   position: relative;
-  scroll-snap-align: center;
 }
 
 main section.main_view .quick_menu_banner {
@@ -390,8 +391,6 @@ main section.main_view article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   display: flex;
   justify-content: center;
   -webkit-box-align: center;
@@ -544,8 +543,6 @@ main section.profile ul li .icon i {
 }
 
 main section.profile ul li > div {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -585,64 +582,8 @@ main section.profile ul li > div p > span {
   font-size: 20px;
 }
 
-main section.project .contents {
-  width: 70%;
-  height: 100vh;
-  background-color: rgba(255, 0, 0, 0.3);
-}
-
-main section.project .contents ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  background-color: rgba(255, 0, 230, 0.1);
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-main section.project .contents ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 25%;
-  height: 200px;
-  margin: 10px;
-  background-color: rgba(222, 225, 30, 0.4);
-}
-
-main section.project .contents ul li > div img {
-  width: 300px;
-  height: 120px;
-}
-
-main section.project .contents ul li > div p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  line-height: 4;
-}
-
-main section.project .search_window {
+main section.project {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -656,19 +597,201 @@ main section.project .search_window {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 30%;
-  height: 100vh;
+}
+
+main section.project .search_window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 60px;
+  width: 100%;
+  height: 30vh;
   background-color: rgba(0, 0, 255, 0.3);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+}
+
+main section.project .search_window .search {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 60%;
+  height: 50px;
+  padding: 0 20px;
+}
+
+main section.project .search_window .search input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none;
+}
+
+main section.project .search_window .search i {
+  color: #000;
+  font-size: 20px;
 }
 
 main section.project .search_window .filter_window {
-  background-color: rgba(255, 255, 255, 0.1);
-  width: 300px;
-  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+}
+
+main section.project .search_window .filter_window button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  height: 30px;
+  border: 0;
   border-radius: 5px;
-  margin: 10px 0;
+  background-color: #fff;
+  color: #000;
+}
+
+main section.project .contents {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+}
+
+main section.project .contents ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+main section.project .contents ul li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 25%;
+  height: 50%;
+  margin-right: 20px;
+}
+
+main section.project .contents ul li img {
+  width: 80%;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+main section.project .contents ul li .text {
+  position: absolute;
+  bottom: 10px;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 65%;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 8px;
+  line-height: 25px;
+}
+
+main section.project .contents ul li .text h6 {
+  font-size: 20px;
+}
+
+main section.project .contents ul li .text .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section.project .contents ul li .text .tag p {
+  margin: 0 2px;
 }
 
 main section.career {
@@ -701,8 +824,6 @@ main section.career ul li {
   background-color: rgba(0, 0, 0, 0.6);
   margin: 10px;
   padding: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 main section.career ul li h5 {
