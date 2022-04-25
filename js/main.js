@@ -49,38 +49,82 @@ sideSlide[4].addEventListener("click", function () {
   sideSlide[4].classList.add("onClick");
 });
 
+// 스크롤 다운 버튼 제어
+// 스크롤 다운 버튼 제어
+// 스크롤 다운 버튼 제어
+// 스크롤 다운 버튼 제어
+// 스크롤 다운 버튼 제어
+
 const scrollDown = document.querySelector(".scrollDown"); // 스크롤 다운 btn
 
-window.onscroll = function () {
-  scrollFunction();
-};
+scrollDown.addEventListener("click", scrollDownOnClick);
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollDown.style.display = "none";
+function scrollDownOnClick() {
+  let OnClickCount = 0;
+  OnClickCount += 1000;
+  // alert(OnClickCount);
+  window.scrollTo({
+    top: 1000,
+  });
+}
+
+// 스크롤 다운 버튼 제어
+// 스크롤 다운 버튼 제어
+// 스크롤 다운 버튼 제어
+// 스크롤 다운 버튼 제어
+// 스크롤 다운 버튼 제어
+
+// window.onscroll = function () {
+//   scrollFunction();
+// };
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//     scrollDown.style.display = "none";
+//   } else {
+//     scrollDown.style.display = "block";
+//   }
+// }
+
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+// 스크롤 위치 감지
+
+function detectBottom() {
+  var scrollTop = $(window).scrollTop();
+  var innerHeight = $(window).innerHeight();
+  var scrollHeight = $("body").prop("scrollHeight");
+  if (scrollTop + innerHeight >= scrollHeight) {
+    return true;
+    alert("맨 밑");
   } else {
-    scrollDown.style.display = "block";
+    return false;
   }
 }
 
-// 스크롤 위치 감지
-// 스크롤 위치 감지
-// 스크롤 위치 감지
-// 스크롤 위치 감지
-// 스크롤 위치 감지
-// 스크롤 위치 감지
-// 스크롤 위치 감지
-// 스크롤 위치 감지
-
-window.addEventListener("scroll", () => {
-  //스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
-  console.log(window.scrollX, window.scrollY);
-  if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 20) {
-    language.style.display = "none";
+function detectTop() {
+  var scrollTop = $(window).scrollTop();
+  if (scrollTop == 0) {
+    return true;
   } else {
-    language.style.display = "block";
+    return false;
   }
-});
+}
+
+// https: window.addEventListener("scroll", () => {
+//   //스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
+//   console.log(window.scrollX, window.scrollY);
+//   if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 20) {
+//     // language.style.display = "none";
+//   } else {
+//     // language.style.display = "block";
+//   }
+// });
 
 // 스크롤 위치 감지
 // 스크롤 위치 감지
@@ -91,7 +135,7 @@ window.addEventListener("scroll", () => {
 
 // section1 메인화면
 
-// 배너 슬라이드 번호를 누르면 보이는 화면 제어
+// 하단 배너 슬라이드 번호를 누르면 보이는 화면 제어
 const bannerNumber = document.querySelectorAll(".banner_number>li"); // 버튼 부분
 const articleNumber = document.querySelectorAll(".main_view>article"); // 이미지 부분
 
@@ -138,5 +182,21 @@ bannerNumber[3].addEventListener("click", () => {
   articleNumber[2].style.visibility = "hidden";
   articleNumber[3].style.visibility = "visible";
 });
+
+// 3초마다 배너 이미지 변경
+setInterval(() => {
+  setTimeout(() => {
+    bannerNumber[1].click();
+  }, 0);
+  setTimeout(() => {
+    bannerNumber[2].click();
+  }, 3000);
+  setTimeout(() => {
+    bannerNumber[3].click();
+  }, 6000);
+  setTimeout(() => {
+    bannerNumber[0].click();
+  }, 9000);
+}, 12000);
 
 // section4 프로젝트
