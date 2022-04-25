@@ -1,3 +1,11 @@
+// 헤더 영역
+const language = document.querySelector(".language"); // 언어 버튼
+const panel = document.querySelector(".panel"); // 언어 설정 버튼
+
+language.addEventListener("click", function () {
+  panel.classList.toggle("hidden");
+});
+
 // 사이드 퀵 메뉴 제어
 const sideSlide = document.querySelectorAll("ul.slide_number>li"); // 사이드 퀵 슬라이드 버튼
 

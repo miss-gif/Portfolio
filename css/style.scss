@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -59,30 +60,31 @@ header {
         li {
           @include center();
           font-size: 18px;
-          margin-right: 60px;
+          margin-right: 50px;
           letter-spacing: 2px;
           padding: 10px;
           &:last-child {
             margin-right: 0;
           }
           a {
-            padding: 0 10px;
             position: relative;
-            transition: 0.15s;
-            text-shadow: 0 0 2px rgba(0, 0, 0, 0.5), 1px 1px 3px rgba(0, 0, 0, 0.5);
-            &:hover {
-              // text-shadow: 2px 2px 3px #d3d9d2;
+            padding: 20px;
+            text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.8);
+            &::before {
+              position: absolute;
+              content: "";
+              left: 50%;
+              bottom: 30%;
+              width: 0;
+              height: 16px;
+              background: none repeat scroll 0 0 transparent;
+              background: #ffb000;
+              transition: width 0.3s ease 0s, left 0.3s ease 0s;
+              z-index: -1;
             }
             &:hover::before {
-              position: absolute;
-              left: 0;
-              bottom: 0;
-              content: "";
               width: 100%;
-              height: 16px;
-              transform: skew(-35deg);
-              background-color: #298f46;
-              z-index: -1;
+              left: 0;
             }
           }
         }
@@ -96,7 +98,7 @@ header {
     padding: 10px 20px;
     cursor: pointer;
     &:hover {
-      background-color: #666;
+      background-color: rgba(0, 0, 0, 0.5);
     }
     > ul.panel {
       position: absolute;
@@ -128,7 +130,6 @@ main {
   .quick_menu {
     position: fixed;
     width: 90%;
-    // background-color: #156;
     top: 50%;
     @include center();
     z-index: 90;
@@ -230,18 +231,21 @@ main {
 
 // 메인 영역
 main {
+  scroll-snap-align: center;
   // 공통 고정 값
   section {
+    position: relative;
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
     @include center();
-    // border: 1px solid #fff;
+    scroll-snap-align: center;
   }
 
   // section1 메인화면 시작
   section.main_view {
     position: relative;
+    scroll-snap-align: center;
 
     .quick_menu_banner {
       position: absolute;
