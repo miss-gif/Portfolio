@@ -686,7 +686,7 @@ main section.project .search_window .filter_window button {
   color: #000;
 }
 
-main section.project .contents {
+main section.project .search_result {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -703,7 +703,7 @@ main section.project .contents {
   height: 70vh;
 }
 
-main section.project .contents ul {
+main section.project .search_result ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -721,7 +721,7 @@ main section.project .contents ul {
   overflow: hidden;
 }
 
-main section.project .contents ul li {
+main section.project .search_result ul li {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -741,14 +741,14 @@ main section.project .contents ul li {
   margin-right: 20px;
 }
 
-main section.project .contents ul li img {
+main section.project .search_result ul li img {
   width: 80%;
   border-radius: 10px;
   -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-main section.project .contents ul li .text {
+main section.project .search_result ul li .text {
   position: absolute;
   bottom: 10px;
   -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
@@ -774,11 +774,11 @@ main section.project .contents ul li .text {
   line-height: 25px;
 }
 
-main section.project .contents ul li .text h6 {
+main section.project .search_result ul li .text h6 {
   font-size: 20px;
 }
 
-main section.project .contents ul li .text .tag {
+main section.project .search_result ul li .text .tag {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -790,7 +790,7 @@ main section.project .contents ul li .text .tag {
           align-items: center;
 }
 
-main section.project .contents ul li .text .tag p {
+main section.project .search_result ul li .text .tag p {
   margin: 0 2px;
 }
 

@@ -40,8 +40,8 @@
           <button class="language">
             Language ▼
             <ul class="panel hidden">
-              <li><a href="#">한국어</a></li>
-              <li><a href="#">日本語</a></li>
+              <li><a href="javascript:void(0)">한국어</a></li>
+              <li><a href="javascript:void(0)">日本語</a></li>
             </ul>
           </button>
         </div>
@@ -171,7 +171,7 @@
           <!-- 검색창 -->
           <div class="search_window">
             <div class="search">
-              <input type="text" />
+              <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="검색" />
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div id="filter_window" class="filter_window">
@@ -189,9 +189,9 @@
             </div>
           </div>
           <!-- 검색 내용 -->
-          <div class="contents">
-            <ul id="list">
-              <li class="filterList clone">
+          <div class="search_result">
+            <ul id="search_result_ul">
+              <li>
                 <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
                 <div class="text">
                   <h6>스타벅스 클론코딩</h6>
@@ -202,10 +202,10 @@
                   </div>
                 </div>
               </li>
-              <li class="filterList clone library">
+              <li>
                 <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
                 <div class="text">
-                  <h6>스타벅스 클론코딩</h6>
+                  <h6>구구단 만들기</h6>
                   <div class="tag">
                     <p>#클론 코딩</p>
                     <p>#라이브러리</p>
@@ -213,10 +213,10 @@
                   </div>
                 </div>
               </li>
-              <li class="filterList clone library pc">
+              <li>
                 <img src="./img/4.project/Starbucks.png" alt="스타벅스" />
                 <div class="text">
-                  <h6>스타벅스 클론코딩</h6>
+                  <h6>파리바게트</h6>
                   <div class="tag">
                     <p>#클론 코딩</p>
                     <p>#라이브러리</p>

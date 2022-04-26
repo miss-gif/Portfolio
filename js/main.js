@@ -153,3 +153,20 @@ setInterval(() => {
 }, 2000);
 
 // section4 프로젝트
+
+// 검색창 구현 (타이틀)
+function searchFunction() {
+  const searchInput = document.getElementById("searchInput"); // 입력창
+  const filter = searchInput.value.toUpperCase(); // 입력값, 문자열을 대문자로 변환한 값을 반환
+  const ul = document.getElementById("search_result_ul"); // ul
+  const li = ul.getElementsByTagName("li"); // li
+  for (let i = 0; i < li.length; i++) {
+    const searchWord = li[i].getElementsByTagName("h6")[0]; // li 안에 h6 태그 기준으로 검색 가능
+    const wordValue = searchWord.textContent || searchWord.innerText; // textContent 공백을 포함한, innerText 공백을 제외한
+    if (wordValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
