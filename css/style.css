@@ -262,10 +262,6 @@ main .quick_menu ul.slide_number > li > a {
   border-radius: 50%;
 }
 
-main .quick_menu button.scrollDown {
-  border: 0;
-}
-
 main .quick_menu button.scrollDown > a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,9 +275,6 @@ main .quick_menu button.scrollDown > a {
   position: fixed;
   right: 5%;
   bottom: 6%;
-  background-color: transparent;
-  border: 0;
-  color: #fff;
   -webkit-animation-name: moving;
           animation-name: moving;
   -webkit-animation-duration: 1s;
@@ -295,6 +288,7 @@ main .quick_menu button.scrollDown > a {
 }
 
 main .quick_menu button.scrollDown > a > p {
+  text-shadow: 2px 2px 2px #000;
   font-size: 10px;
   position: absolute;
   top: -20px;
@@ -474,10 +468,10 @@ main section.profile {
 
 main section.profile h3 {
   letter-spacing: 10px;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 600;
   margin: 6rem;
-  text-shadow: 2px 2px 5px #000;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 main section.profile ul {
@@ -496,7 +490,6 @@ main section.profile ul {
 }
 
 main section.profile ul li {
-  padding: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -506,26 +499,18 @@ main section.profile ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 18px;
   width: calc(80% / 3);
   height: 140px;
+  padding: 10px;
   margin: 10px;
-  background-color: rgba(64, 178, 206, 0.3);
-  -webkit-box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.6);
-          box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.6);
+  background-color: rgba(65, 131, 147, 0.3);
+  -webkit-box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
 main section.profile ul li .icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 120px;
+  width: 20%;
   height: 100%;
 }
 
@@ -540,9 +525,11 @@ main section.profile ul li .icon i {
       -ms-flex-align: center;
           align-items: center;
   font-size: 40px;
+  width: 100%;
+  height: 100%;
 }
 
-main section.profile ul li > div {
+main section.profile ul li > div:nth-child(2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,6 +539,9 @@ main section.profile ul li > div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 20px;
+  width: 75%;
+  height: 100%;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -559,27 +549,23 @@ main section.profile ul li > div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 10px;
-  width: 100%;
-  height: 100%;
 }
 
-main section.profile ul li > div h5 {
-  letter-spacing: 5px;
-  font-size: 20px;
+main section.profile ul li > div:nth-child(2) h5 {
+  letter-spacing: 3px;
+  font-size: 16px;
   line-height: 1.4;
   text-shadow: 0px 0px 4px #000;
 }
 
-main section.profile ul li > div p {
-  letter-spacing: 1px;
-  font-size: 25px;
+main section.profile ul li > div:nth-child(2) p {
+  font-size: 20px;
   line-height: 1.2;
   text-shadow: 0px 0px 4px #000;
 }
 
-main section.profile ul li > div p > span {
-  font-size: 20px;
+main section.profile ul li > div:nth-child(2) p > span {
+  font-size: 18px;
 }
 
 main section.project {
@@ -684,6 +670,48 @@ main section.project .search_window .filter_window button {
   border-radius: 5px;
   background-color: #fff;
   color: #000;
+}
+
+main section.project .search_window .filter_window .btnGroupNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+main section.project .search_window .filter_window .btnGroupSkill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+main section.project .search_window .filter_window .btnGroupDevices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 main section.project .search_result {
@@ -806,10 +834,11 @@ main section.career {
 }
 
 main section.career h3 {
-  font-size: 6rem;
-  margin-bottom: 6rem;
-  text-align: left;
-  background-color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 10px;
+  font-size: 64px;
+  font-weight: 600;
+  margin: 6rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 main section.career ul {
@@ -820,15 +849,16 @@ main section.career ul {
 
 main section.career ul li {
   width: 350px;
-  height: 350px;
+  height: 280px;
   background-color: rgba(0, 0, 0, 0.6);
   margin: 10px;
   padding: 20px;
+  border-radius: 15px 0 15px 0;
 }
 
 main section.career ul li h5 {
   position: relative;
-  font-size: 3rem;
+  font-size: 36px;
   margin-bottom: 30px;
 }
 

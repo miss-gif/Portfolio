@@ -176,16 +176,22 @@
             </div>
             <div id="filter_window" class="filter_window">
               <button class="filter_btn active" onClick="filterSelection('all')">모두 보기</button>
-              <button class="filter_btn" onClick="filterSelection('single')">개인</button>
-              <button class="filter_btn" onClick="filterSelection('team')">팀별</button>
-              <button class="filter_btn" onClick="filterSelection('clone')">클론 코딩</button>
-              <button class="filter_btn" onClick="filterSelection('vanilla')">바닐라</button>
-              <button class="filter_btn" onClick="filterSelection('framework')">프레임워크</button>
-              <button class="filter_btn" onClick="filterSelection('library')">라이브러리</button>
-              <button class="filter_btn" onClick="filterSelection('pc')">PC</button>
-              <button class="filter_btn" onClick="filterSelection('tablet')">태블릿</button>
-              <button class="filter_btn" onClick="filterSelection('mobile')">모바일</button>
-              <button class="filter_btn" onClick="filterSelection('responsive')">반응형</button>
+              <div class="btnGroupNumber">
+                <button class="filter_btn" onClick="filterSelection('single')">개인</button>
+                <button class="filter_btn" onClick="filterSelection('team')">팀별</button>
+                <button class="filter_btn" onClick="filterSelection('clone')">클론 코딩</button>
+              </div>
+              <div class="btnGroupSkill">
+                <button class="filter_btn" onClick="filterSelection('vanilla')">바닐라</button>
+                <button class="filter_btn" onClick="filterSelection('framework')">프레임워크</button>
+                <button class="filter_btn" onClick="filterSelection('library')">라이브러리</button>
+              </div>
+              <div class="btnGroupDevices">
+                <button class="filter_btn" onClick="filterSelection('pc')">PC</button>
+                <button class="filter_btn" onClick="filterSelection('tablet')">태블릿</button>
+                <button class="filter_btn" onClick="filterSelection('mobile')">모바일</button>
+                <button class="filter_btn" onClick="filterSelection('responsive')">반응형</button>
+              </div>
             </div>
           </div>
           <!-- 검색 내용 -->
@@ -275,10 +281,11 @@
 
         <!-- section5 커리어 시작 -->
         <section id="career" class="career">
-          <h3>걸어온 발자취..</h3>
+          <h3>Career</h3>
           <ul>
             <li>
               <h5>교육</h5>
+              <p>2010.03~2018.02 <br />00대학교 졸업</p>
               <p>2010.03~2018.02 <br />00대학교 졸업</p>
             </li>
             <li>

@@ -43,6 +43,7 @@ header {
   width: 100%;
   height: 80px;
   @include center();
+
   .inner {
     width: 90%;
     @include center();
@@ -50,6 +51,7 @@ header {
 
     h1 {
       @include center();
+
       a {
         img {
           height: 72px;
@@ -60,19 +62,23 @@ header {
     nav {
       ul {
         display: flex;
+
         li {
           @include center();
           font-size: 18px;
           margin-right: 50px;
           letter-spacing: 2px;
           padding: 10px;
+
           &:last-child {
             margin-right: 0;
           }
+
           a {
             position: relative;
             padding: 20px;
             text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.8);
+
             &::before {
               position: absolute;
               content: "";
@@ -85,6 +91,7 @@ header {
               transition: width 0.3s ease 0s, left 0.3s ease 0s;
               z-index: -1;
             }
+
             &:hover::before {
               width: 100%;
               left: 0;
@@ -100,23 +107,29 @@ header {
     border: 1px solid #fff;
     padding: 10px 20px;
     cursor: pointer;
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.5);
     }
+
     > ul.panel {
       position: absolute;
       left: 0;
       width: 100%;
       margin-top: 15px;
+
       > li {
         background-color: #333;
+
         &:hover {
           background-color: #fff;
         }
+
         a {
           display: block;
           padding: 10px 20px;
           color: #fff;
+
           &:hover {
             color: #000;
           }
@@ -130,6 +143,7 @@ header {
 main {
   @include center();
   flex-direction: column;
+
   .quick_menu {
     position: fixed;
     width: 90%;
@@ -152,6 +166,7 @@ main {
         &:last-child {
           margin-bottom: 0;
         }
+
         // 호버 시 글자 출력
         &:hover::before {
           position: absolute;
@@ -166,21 +181,27 @@ main {
           color: #111;
           @include center();
         }
+
         &:nth-child(1):hover::before {
           content: "Main";
         }
+
         &:nth-child(2):hover::before {
           content: "Profile";
         }
+
         &:nth-child(3):hover::before {
           content: "Tech Stack";
         }
+
         &:nth-child(4):hover::before {
           content: "Project";
         }
+
         &:nth-child(5):hover::before {
           content: "Career";
         }
+
         > a {
           position: relative;
           display: block;
@@ -194,31 +215,31 @@ main {
 
     // 스크롤 다운 버튼
     button.scrollDown {
-      border: 0;
       > a {
         @include center();
         position: fixed;
         right: 5%;
         bottom: 6%;
-        background-color: transparent;
-        border: 0;
-        color: #fff;
         animation-name: moving; // 애니메이션 명
         animation-duration: 1s; // 완료까지 걸리는 시간 설정
         animation-timing-function: linear; // 속도 곡선 설정
         // animation-delay: 2s; // 지연 설정
         animation-iteration-count: infinite; // 반복 설정
         animation-direction: alternate; // 재생 방향 설정
+
         > p {
+          text-shadow: 2px 2px 2px #000;
           font-size: 10px;
           position: absolute;
           top: -20px;
         }
+
         > img {
           width: 50px;
         }
       }
     }
+
     @keyframes moving {
       0% {
         bottom: 6%;
@@ -250,6 +271,7 @@ main {
   // section1 메인화면 시작
   section.main_view {
     position: relative;
+
     .quick_menu_banner {
       position: absolute;
       width: 90%;
@@ -268,6 +290,7 @@ main {
           opacity: 0.3;
           transform: skew(-35deg);
           cursor: pointer;
+
           &:first-child {
             opacity: 1;
           }
@@ -287,6 +310,7 @@ main {
 
       .main_title {
         width: 90%;
+
         h2 {
           font-size: 36px;
           font-weight: 600;
@@ -307,6 +331,7 @@ main {
           border: 1px solid #fff;
           margin: 20px 0;
           text-transform: uppercase;
+
           &:hover {
             background-color: rgba(255, 255, 255, 0.2);
             color: orange;
@@ -360,65 +385,74 @@ main {
 
     h3 {
       letter-spacing: 10px;
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: 600;
       margin: 6rem;
-      text-shadow: 2px 2px 5px #000;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     }
 
     ul {
       @include center();
       flex-wrap: wrap;
       width: 80%;
+
       li {
-        padding: 0 10px;
         @include center();
-        font-size: 18px;
         width: calc(80% / 3);
         height: 140px;
+        padding: 10px;
         margin: 10px;
-        background-color: rgba(64, 178, 206, 0.3);
-        box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.6);
+        background-color: rgba(65, 131, 147, 0.3);
+        box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+
         .icon {
-          @include center();
-          width: 120px;
+          width: 20%;
           height: 100%;
+
           i {
             @include center();
             font-size: 40px;
+            width: 100%;
+            height: 100%;
           }
         }
-        > div {
+
+        > div:nth-child(2) {
           @include center();
+          padding: 20px;
+          width: 75%;
+          height: 100%;
           align-items: baseline;
           flex-direction: column;
-          padding: 0 10px;
-          width: 100%;
-          height: 100%;
+
           h5 {
-            letter-spacing: 5px;
-            font-size: 20px;
+            letter-spacing: 3px;
+            font-size: 16px;
             line-height: 1.4;
             text-shadow: 0px 0px 4px #000;
           }
+
           p {
-            letter-spacing: 1px;
-            font-size: 25px;
+            font-size: 20px;
             line-height: 1.2;
             text-shadow: 0px 0px 4px #000;
+
             > span {
-              font-size: 20px;
+              font-size: 18px;
             }
           }
         }
       }
     }
   }
+
   // section2 프로필 종료
 
   // section3 기술스택 시작
   section.tech_stack {
   }
+
   // section3 기술스택 종료
 
   // section4 프로젝트 시작
@@ -426,6 +460,7 @@ main {
     position: relative;
     @include center();
     flex-direction: column;
+
     // 검색창
     .search_window {
       position: absolute;
@@ -437,6 +472,7 @@ main {
       width: 100%;
       height: 30vh;
       background-color: rgba(0, 0, 255, 0.3);
+
       .search {
         margin: 20px;
         @include center();
@@ -445,6 +481,7 @@ main {
         width: 60%;
         height: 50px;
         padding: 0 20px;
+
         // padding-bottom: 5%;
         input {
           width: 100%;
@@ -452,15 +489,19 @@ main {
           border: 0;
           outline: none;
         }
+
         i {
           color: #000;
           font-size: 20px;
         }
       }
+
+      // 검색창 필터 태그 버튼 디자인
       .filter_window {
         @include center();
         justify-content: space-between;
         width: 60%;
+
         button {
           @include center();
           padding: 20px;
@@ -470,8 +511,27 @@ main {
           background-color: #fff;
           color: #000;
         }
+
+        .btnGroupNumber {
+          @include center();
+          background-color: #fff;
+          border-radius: 5px;
+        }
+
+        .btnGroupSkill {
+          @include center();
+          background-color: #fff;
+          border-radius: 5px;
+        }
+
+        .btnGroupDevices {
+          @include center();
+          background-color: #fff;
+          border-radius: 5px;
+        }
       }
     }
+
     // 검색 내용
     .search_result {
       position: absolute;
@@ -480,6 +540,7 @@ main {
       left: 0;
       width: 100%;
       height: 70vh;
+
       ul {
         @include center();
         flex-wrap: wrap;
@@ -487,6 +548,7 @@ main {
         height: 100%;
         padding: 10px;
         overflow: hidden;
+
         li {
           position: relative;
           @include center();
@@ -494,12 +556,14 @@ main {
           width: 25%;
           height: 50%;
           margin-right: 20px;
+
           // background-color: rgba(0, 0, 255, 0.3);
           img {
             width: 80%;
             border-radius: 10px;
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
           }
+
           .text {
             position: absolute;
             bottom: 10px;
@@ -512,12 +576,15 @@ main {
             border-radius: 10px;
             padding: 8px;
             line-height: 25px;
+
             h6 {
               font-size: 20px;
               // line-height: 30px;
             }
+
             .tag {
               @include center();
+
               p {
                 margin: 0 2px;
               }
@@ -527,6 +594,7 @@ main {
       }
     }
   }
+
   // section4 프로젝트 종료
 
   // section5 커리어 시작
@@ -536,26 +604,31 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
     h3 {
-      // display: block;
-      font-size: 6rem;
-      margin-bottom: 6rem;
-      text-align: left;
-      background-color: rgba(0, 0, 0, 0.6);
+      letter-spacing: 10px;
+      font-size: 64px;
+      font-weight: 600;
+      margin: 6rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     }
+
     ul {
       display: flex;
 
       li {
         width: 350px;
-        height: 350px;
+        height: 280px;
         background-color: rgba(0, 0, 0, 0.6);
         margin: 10px;
         padding: 20px;
+        border-radius: 15px 0 15px 0;
+
         h5 {
           position: relative;
-          font-size: 3rem;
+          font-size: 36px;
           margin-bottom: 30px;
+
           &::after {
             position: absolute;
             left: 0;
@@ -566,12 +639,14 @@ main {
             background-color: rgba(255, 255, 255, 0.8);
           }
         }
+
         p {
           font-size: 20px;
         }
       }
     }
   }
+
   // section5 커리어 종료
 }
 
@@ -588,6 +663,7 @@ footer {
   background-color: #156;
   border-radius: 50%;
   cursor: pointer;
+
   &::after {
     position: absolute;
     top: 50%;
