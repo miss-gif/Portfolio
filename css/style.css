@@ -262,6 +262,10 @@ main .quick_menu ul.slide_number > li > a {
   border-radius: 50%;
 }
 
+main .quick_menu button.scrollDown {
+  border: 0;
+}
+
 main .quick_menu button.scrollDown > a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -619,7 +623,7 @@ main section.project .search_window .search {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 5px;
+  border: 1px solid black;
   background-color: #fff;
   width: 60%;
   height: 50px;
@@ -686,6 +690,13 @@ main section.project .search_window .filter_window .btnGroupNumber {
   border-radius: 5px;
 }
 
+main section.project .search_window .filter_window .btnGroupNumber > button:nth-child(2) {
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 0;
+}
+
 main section.project .search_window .filter_window .btnGroupSkill {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -700,6 +711,13 @@ main section.project .search_window .filter_window .btnGroupSkill {
   border-radius: 5px;
 }
 
+main section.project .search_window .filter_window .btnGroupSkill > button:nth-child(2) {
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 0;
+}
+
 main section.project .search_window .filter_window .btnGroupDevices {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -712,6 +730,21 @@ main section.project .search_window .filter_window .btnGroupDevices {
           align-items: center;
   background-color: #fff;
   border-radius: 5px;
+}
+
+main section.project .search_window .filter_window .btnGroupDevices > button:nth-child(2) {
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 0;
+}
+
+main section.project .search_window .filter_window .btnGroupDevices > button:nth-child(3) {
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0;
 }
 
 main section.project .search_result {
@@ -767,6 +800,7 @@ main section.project .search_result ul li {
   width: 25%;
   height: 50%;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 main section.project .search_result ul li img {
@@ -874,6 +908,7 @@ main section.career ul li h5::after {
 
 main section.career ul li p {
   font-size: 20px;
+  line-height: 30px;
 }
 
 .onClick {
