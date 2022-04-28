@@ -1,36 +1,40 @@
-// 헤더 영역
-// 헤더 영역
-// 헤더 영역
+// 작업 중에 사용 - 스크롤이 발생할 때, 현재 스크롤 위치를 콘솔에 출력
+// window.addEventListener("scroll", () => {
+//   console.log(window.scrollX, window.scrollY);
+// });
 
-const language = document.querySelector(".language"); // 언어 버튼
-const panel = document.querySelector(".panel"); // 언어 설정 버튼
+// common
 
+// 헤더 영역 - language 버튼 토글 기능
+
+const language = document.querySelector(".language"); // language 버튼
+
+// language 버튼을 클릭하면 활성화/비활성화
 language.addEventListener("click", function () {
+  const panel = document.querySelector(".panel"); // 언어 설정 버튼
   panel.classList.toggle("hidden");
 });
 
-// common
-// common
-// common
+// section1 메인화면 - 우측 스크롤 제어
 
-window.addEventListener("scroll", () => {
-  //스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
-  console.log(window.scrollX, window.scrollY);
-});
-
-// 사이드 퀵 메뉴 제어
 window.addEventListener("scroll", 스크롤함수);
-const sideSlide = document.querySelectorAll("ul.slide_number>li"); // 사이드 퀵 슬라이드 버튼
 
 function 스크롤함수() {
-  const sectionNum = document.querySelectorAll("section"); // 섹션 영역
+  const sideSlide = document.querySelectorAll("ul.slide_number>li"); // 우측 슬라이드 버튼
+  const sectionNum = document.querySelectorAll("section"); // 섹션 영역 (슬라이드)
   const scrollDown = document.querySelector(".scrollDown"); // 스크롤 다운 btn
+  const navMenu = document.querySelectorAll("nav>ul>li>a"); // nav의 menu
+  // 스크롤이 조건에 해당되면 기능 작동
   if (window.scrollY === sectionNum[0].offsetTop) {
     sideSlide[0].classList.add("onClick");
     sideSlide[1].classList.remove("onClick");
     sideSlide[2].classList.remove("onClick");
     sideSlide[3].classList.remove("onClick");
     sideSlide[4].classList.remove("onClick");
+    navMenu[0].classList.remove("menuActive");
+    navMenu[1].classList.remove("menuActive");
+    navMenu[2].classList.remove("menuActive");
+    navMenu[3].classList.remove("menuActive");
     scrollDown.addEventListener("click", scrollDownOnClick);
     function scrollDownOnClick() {
       window.scrollTo({ top: 1000 });
@@ -42,6 +46,10 @@ function 스크롤함수() {
     sideSlide[2].classList.remove("onClick");
     sideSlide[3].classList.remove("onClick");
     sideSlide[4].classList.remove("onClick");
+    navMenu[0].classList.add("menuActive");
+    navMenu[1].classList.remove("menuActive");
+    navMenu[2].classList.remove("menuActive");
+    navMenu[3].classList.remove("menuActive");
     scrollDown.addEventListener("click", scrollDownOnClick);
     function scrollDownOnClick() {
       window.scrollTo({ top: 2000 });
@@ -53,6 +61,10 @@ function 스크롤함수() {
     sideSlide[2].classList.add("onClick");
     sideSlide[3].classList.remove("onClick");
     sideSlide[4].classList.remove("onClick");
+    navMenu[0].classList.remove("menuActive");
+    navMenu[1].classList.add("menuActive");
+    navMenu[2].classList.remove("menuActive");
+    navMenu[3].classList.remove("menuActive");
     scrollDown.addEventListener("click", scrollDownOnClick);
     function scrollDownOnClick() {
       window.scrollTo({ top: 3000 });
@@ -64,6 +76,10 @@ function 스크롤함수() {
     sideSlide[2].classList.remove("onClick");
     sideSlide[3].classList.add("onClick");
     sideSlide[4].classList.remove("onClick");
+    navMenu[0].classList.remove("menuActive");
+    navMenu[1].classList.remove("menuActive");
+    navMenu[2].classList.add("menuActive");
+    navMenu[3].classList.remove("menuActive");
     scrollDown.addEventListener("click", scrollDownOnClick);
     function scrollDownOnClick() {
       window.scrollTo({ top: 4000 });
@@ -75,6 +91,10 @@ function 스크롤함수() {
     sideSlide[2].classList.remove("onClick");
     sideSlide[3].classList.remove("onClick");
     sideSlide[4].classList.add("onClick");
+    navMenu[0].classList.remove("menuActive");
+    navMenu[1].classList.remove("menuActive");
+    navMenu[2].classList.remove("menuActive");
+    navMenu[3].classList.add("menuActive");
     scrollDown.addEventListener("click", scrollDownOnClick);
     function scrollDownOnClick() {
       window.scrollTo({ top: 0 });
@@ -136,7 +156,7 @@ bannerNumber[3].addEventListener("click", () => {
   articleNumber[3].style.visibility = "visible";
 });
 
-// 3초마다 배너 이미지 변경
+// section1 메인화면 - 자동으로 재생되는 슬라이드 제어
 setInterval(() => {
   setTimeout(() => {
     bannerNumber[1].click();
@@ -150,7 +170,7 @@ setInterval(() => {
   setTimeout(() => {
     bannerNumber[0].click();
   }, 9000);
-}, 2000);
+}, 12000);
 
 // section4 프로젝트
 

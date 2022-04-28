@@ -89,7 +89,7 @@ header .inner nav ul li {
   font-size: 18px;
   margin-right: 50px;
   letter-spacing: 2px;
-  padding: 10px;
+  padding: 30px;
 }
 
 header .inner nav ul li:last-child {
@@ -98,17 +98,18 @@ header .inner nav ul li:last-child {
 
 header .inner nav ul li a {
   position: relative;
-  padding: 20px;
   text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 header .inner nav ul li a::before {
   position: absolute;
   content: "";
+  top: 80%;
   left: 50%;
-  bottom: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 0;
-  height: 16px;
+  height: 18px;
   background: none repeat scroll 0 0 transparent;
   background: rgba(255, 166, 0, 0.8);
   -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
@@ -117,8 +118,7 @@ header .inner nav ul li a::before {
 }
 
 header .inner nav ul li a:hover::before {
-  width: 100%;
-  left: 0;
+  width: 120%;
 }
 
 header button.language {
@@ -933,5 +933,32 @@ main section.career ul li p {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   border: 1px solid #fff;
+}
+
+.menuActive {
+  position: relative;
+}
+
+.menuActive::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: "";
+  width: 125%;
+  height: 165%;
+  background-color: #757575;
+  border-radius: 5px;
+  z-index: -1;
 }
 /*# sourceMappingURL=style.css.map */

@@ -68,7 +68,7 @@ header {
           font-size: 18px;
           margin-right: 50px;
           letter-spacing: 2px;
-          padding: 10px;
+          padding: 30px;
 
           &:last-child {
             margin-right: 0;
@@ -76,16 +76,16 @@ header {
 
           a {
             position: relative;
-            padding: 20px;
             text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.8);
 
             &::before {
               position: absolute;
               content: "";
+              top: 80%;
               left: 50%;
-              bottom: 30%;
+              transform: translate(-50%, -50%);
               width: 0;
-              height: 16px;
+              height: 18px;
               background: none repeat scroll 0 0 transparent;
               background: rgba(255, 166, 0, 0.8);
               transition: width 0.3s ease 0s, left 0.3s ease 0s;
@@ -93,8 +93,7 @@ header {
             }
 
             &:hover::before {
-              width: 100%;
-              left: 0;
+              width: 120%;
             }
           }
         }
@@ -679,7 +678,7 @@ main {
 footer {
 }
 
-// 사이드 퀵 메뉴 클릭 시 디자인
+// 우측 슬라이드 버튼 활성화 디자인
 .onClick {
   position: relative;
   display: block;
@@ -700,5 +699,24 @@ footer {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     border: 1px solid #fff;
+  }
+}
+
+// nav의 menu 활성화 디자인
+.menuActive {
+  position: relative;
+
+  &::after {
+    @include center();
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 125%;
+    height: 165%;
+    background-color: #757575;
+    border-radius: 5px;
+    z-index: -1;
   }
 }
