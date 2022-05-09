@@ -4,6 +4,7 @@
 // });
 
 // common
+console.log(window.innerWidth + "x" + window.innerHeight); // 뷰포트 크기 출력
 
 // 헤더 영역 - language 버튼 토글 기능
 
@@ -24,6 +25,7 @@ function 스크롤함수() {
   const sectionNum = document.querySelectorAll("section"); // 섹션 영역 (슬라이드)
   const scrollDown = document.querySelector(".scrollDown"); // 스크롤 다운 btn
   const navMenu = document.querySelectorAll("nav>ul>li>a"); // nav의 menu
+
   // 스크롤이 조건에 해당되면 기능 작동
   if (window.scrollY === sectionNum[0].offsetTop) {
     sideSlide[0].classList.add("onClick");
